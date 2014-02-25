@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'appicon_generate'
+require 'appicon_generate/version'
+require 'optparse'
+
+options = {}
+OptionParser.new do |opt|
+  Version = AppiconGenerate::VERSION
+  opt.banner = "Usage: #{File.basename($0)} [file] [options]"
+  opt.on('-i', '--ios',     'Generate icon of iOS')     {|v| options[:ios] = v }
+  opt.on('-a', '--android', 'Generate icon of Android') {|v| options[:android] = v }
+  opt.parse!
+
+  if ARGV.empty?
+    puts opt.help
+    exit
+  end
+end
+options = {:ios => true, :android => true} if options.empty?
+
+AppiconGenerate.run(ARGV.first, options)
