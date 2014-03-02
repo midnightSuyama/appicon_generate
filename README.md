@@ -1,5 +1,11 @@
 # AppiconGenerate
 
+[![Gem Version](https://badge.fury.io/rb/appicon_generate.png)](http://badge.fury.io/rb/appicon_generate)
+[![Dependency Status](https://gemnasium.com/midnightSuyama/appicon_generate.png)](https://gemnasium.com/midnightSuyama/appicon_generate)
+[![Build Status](https://travis-ci.org/midnightSuyama/appicon_generate.png?branch=master)](https://travis-ci.org/midnightSuyama/appicon_generate)
+[![Coverage Status](https://coveralls.io/repos/midnightSuyama/appicon_generate/badge.png)](https://coveralls.io/r/midnightSuyama/appicon_generate)
+[![Code Climate](https://codeclimate.com/github/midnightSuyama/appicon_generate.png)](https://codeclimate.com/github/midnightSuyama/appicon_generate)
+
 Generate icon of iOS, Android
 
 ## Installation
