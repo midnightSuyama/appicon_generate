@@ -7,7 +7,7 @@ require 'image_size'
 
 describe AppiconGenerate do
   before :all do
-    Dir.mkdir('tmp') unless Dir.exists?('tmp')
+    Dir.mkdir('tmp') unless File.exists?('tmp')
     Dir.chdir('tmp')
   end
 
