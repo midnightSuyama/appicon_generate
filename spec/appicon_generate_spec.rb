@@ -50,19 +50,19 @@ describe AppiconGenerate do
         end
 
         it 'should exist' do
-          File.exists?(path).should be_true
+          expect(File.exists?(path)).to be true
         end
 
         it 'format should be png' do
-          @image_size.format.should eq :png
+          expect(@image_size.format).to eq :png
         end
 
         it "width should be #{px}px" do
-          @image_size.width.should eq px
+          expect(@image_size.width).to eq px
         end
 
         it "height should be #{px}px" do
-          @image_size.height.should eq px
+          expect(@image_size.height).to eq px
         end
       end
     end
@@ -95,19 +95,19 @@ describe AppiconGenerate do
         end
 
         it 'should exist' do
-          File.exists?(path).should be_true
+          expect(File.exists?(path)).to be true
         end
 
         it 'format should be png' do
-          @image_size.format.should eq :png
+          expect(@image_size.format).to eq :png
         end
 
         it "width should be #{px}px" do
-          @image_size.width.should eq px
+          expect(@image_size.width).to eq px
         end
 
         it "height should be #{px}px" do
-          @image_size.height.should eq px
+          expect(@image_size.height).to eq px
         end
       end
     end
