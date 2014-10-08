@@ -8,8 +8,8 @@ options = {}
 OptionParser.new do |opt|
   Version = AppiconGenerate::VERSION
   opt.banner = "Usage: #{File.basename($0)} [file] [options]"
-  opt.on('-i', '--ios',     'Generate icon of iOS')     {|v| options[:ios] = v }
-  opt.on('-a', '--android', 'Generate icon of Android') {|v| options[:android] = v }
+  opt.on('-i', '--ios',     'Generate icon for iOS')     {|v| options[:ios]     = v }
+  opt.on('-a', '--android', 'Generate icon for Android') {|v| options[:android] = v }
   opt.parse!
 
   if ARGV.empty?

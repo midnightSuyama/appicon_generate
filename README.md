@@ -6,7 +6,7 @@
 [![Coverage Status](https://coveralls.io/repos/midnightSuyama/appicon_generate/badge.png)](https://coveralls.io/r/midnightSuyama/appicon_generate)
 [![Code Climate](https://codeclimate.com/github/midnightSuyama/appicon_generate.png)](https://codeclimate.com/github/midnightSuyama/appicon_generate)
 
-Generate icon of iOS, Android
+Generate icon for iOS, Android
 
 ## Installation
 
@@ -28,8 +28,8 @@ Or install it yourself as:
 
 ### Options
 
-* `-i`, `--ios` Generate icon of iOS
-* `-a`, `--android` Generate icon of Android
+* `-i`, `--ios` Generate icon for iOS
+* `-a`, `--android` Generate icon for Android
 
 ## Contributing
 

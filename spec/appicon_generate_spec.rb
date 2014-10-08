@@ -1,24 +1,46 @@
 # coding: utf-8
 
-require 'rubygems'
 require 'spec_helper'
 require 'fileutils'
 require 'image_size'
 
+shared_context 'icon' do |path, px|
+  before :all do
+    @image_size = ImageSize.path(path)
+  end
+
+  it 'should exist' do
+    expect(File.exists? path).to be true
+  end
+
+  it 'format should be png' do
+    expect(@image_size.format).to eq :png
+  end
+
+  it "width should be #{px}px" do
+    expect(@image_size.width).to eq px
+  end
+
+  it "height should be #{px}px" do
+    expect(@image_size.height).to eq px
+  end
+end
+
 describe AppiconGenerate do
   before :all do
-    Dir.mkdir('tmp') unless File.exists?('tmp')
-    Dir.chdir('tmp')
+    Dir.mkdir 'tmp' unless File.exists? 'tmp'
+    Dir.chdir 'tmp'
+  end
+
+  after :all do
+    Dir.chdir '..'
+    FileUtils.rm_r 'tmp'
   end
 
   # iOS
-  context 'when generate icon of iOS' do
-    before(:all) do
+  context 'when generate icon for iOS' do
+    before :all do
       AppiconGenerate.run("#{File.dirname(__FILE__)}/fixtures/source.png", {:ios => true})
-    end
-
-    after(:all) do
-      FileUtils.rm_r(AppiconGenerate::DEST_PATH)
     end
 
     [
@@ -45,37 +67,15 @@ describe AppiconGenerate do
       path = "#{AppiconGenerate::DEST_PATH}/ios/#{path}"
 
       context "'#{path}'" do
-        before(:all) do
-          @image_size = ImageSize.path(path)
-        end
-
-        it 'should exist' do
-          expect(File.exists?(path)).to be true
-        end
-
-        it 'format should be png' do
-          expect(@image_size.format).to eq :png
-        end
-
-        it "width should be #{px}px" do
-          expect(@image_size.width).to eq px
-        end
-
-        it "height should be #{px}px" do
-          expect(@image_size.height).to eq px
-        end
+        include_context 'icon', [path, px]
       end
     end
   end
 
   # Android
   context 'when generate icon of Android' do
-    before(:all) do
+    before :all do
       AppiconGenerate.run("#{File.dirname(__FILE__)}/fixtures/source.png", {:android => true})
-    end
-
-    after(:all) do
-      FileUtils.rm_r(AppiconGenerate::DEST_PATH)
     end
 
     [
@@ -90,25 +90,7 @@ describe AppiconGenerate do
       path = "#{AppiconGenerate::DEST_PATH}/android/#{path}"
 
       context "'#{path}'" do
-        before(:all) do
-          @image_size = ImageSize.path(path)
-        end
-
-        it 'should exist' do
-          expect(File.exists?(path)).to be true
-        end
-
-        it 'format should be png' do
-          expect(@image_size.format).to eq :png
-        end
-
-        it "width should be #{px}px" do
-          expect(@image_size.width).to eq px
-        end
-
-        it "height should be #{px}px" do
-          expect(@image_size.height).to eq px
-        end
+        include_context 'icon', [path, px]
       end
     end
   end
