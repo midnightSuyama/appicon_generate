@@ -34,6 +34,7 @@ module AppiconGenerate
         ['Icon-72@2x.png',       144],
         ['Icon-76.png',          76],
         ['Icon-76@2x.png',       152],
+        ['Icon-83.5@2x.png',     167],
         ['Icon-Small.png',       29],
         ['Icon-Small@2x.png',    58],
         ['Icon-Small@3x.png',    87],

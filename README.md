@@ -41,5 +41,5 @@ Or install it yourself as:
 
 ## Reference
 
-* [iOS App Programming Guide: App-Related Resources](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
+* [iOS Human Interface Guidelines: Icon and Image Sizes](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html)
 * [Iconography | Android Developers](http://developer.android.com/design/style/iconography.html)
